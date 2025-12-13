@@ -61,6 +61,43 @@ Per-category output files
   - `data/processed/top10_rawg_best_<slug>.csv` (slug is category lowercased and sanitized)
   - Also writes a combined `data/processed/top10_rawg_all.csv` containing all per-category rows with added `category` and `source` columns.
 
+Additional EDA artifacts (produced files)
+
+- `data/processed/rawg_genre_counts.csv`
+  - Where created: `notebooks/eda_rawg.ipynb` (RAWG EDA notebook). An executed copy with outputs may be named `notebooks/eda_rawg-executed.ipynb`.
+  - Schema / columns: `genre` (string), `count` (int). One row per genre present in the cleaned RAWG dataset.
+  - How it's generated: the EDA notebook aggregates `genres` from `data/processed/rawg_cleaned.csv`, explodes lists, groups by genre and counts occurrences, then writes the CSV.
+  - Regeneration command (headless):
+    - python -m nbconvert --to notebook --execute notebooks/eda_rawg.ipynb --output eda_rawg-executed.ipynb --output-dir=notebooks --ExecutePreprocessor.timeout=1200
+  - Business KPIs supported: genre popularity (candidate volume per genre), trend spotting for category emphasis, and weighting genre-based award chances when combined with rating distributions.
+
+- `data/processed/rawg_platform_counts.csv`
+  - Where created: `notebooks/eda_rawg.ipynb`.
+  - Schema / columns: `platform` (string), `count` (int). One row per platform (e.g., PC, PlayStation 5, Xbox Series X) aggregated across games.
+  - How it's generated: the notebook explodes the `platforms` field from `data/processed/rawg_cleaned.csv`, normalizes common platform names, groups and counts, then writes CSV.
+  - Regeneration command (headless): same as above (run `notebooks/eda_rawg.ipynb`).
+  - Business KPIs supported: platform reach (how many candidate games are available per platform), platform-specific nomination strategy, and resource allocation for platform-targeted marketing or QA.
+
+- `data/processed/top10_rawg_best_overall.csv`
+  - Where created: `notebooks/top10_analysis.ipynb` (the RAWG Top‑10 notebook). Executed notebook saved as `notebooks/top10_analysis-executed.ipynb` when run headless.
+  - Schema / columns (typical):
+    - `name` (string)
+    - `name_key` (string, normalized name for dedup)
+    - `rating_score` (float; unified 0-100 score used for ranking)
+    - `metacritic` (float or NA)
+    - `ratings` (float; RAWG ratings where present)
+    - `release_date` (ISO date string)
+    - `genres` (string or list-like)
+    - `platforms` (string or list-like)
+    - `description` (string)
+    - `category` (string; the award/category that produced the top-10 placement)
+    - `source` (string; 'rawg')
+  - How it's generated: the notebook computes per-category Top‑10s, deduplicates by `name_key` keeping the highest `rating_score`, and then composes an overall best list which is written to this CSV.
+  - Regeneration command (headless):
+    - python -m nbconvert --to notebook --execute notebooks/top10_analysis.ipynb --output top10_analysis-executed.ipynb --output-dir=notebooks --ExecutePreprocessor.timeout=1200
+  - Business KPIs supported: executive summary of candidate best games across categories (useful for shortlist creation), cross-category consistency (how often a title appears across categories), and primary signals for nomination/award prioritization.
+
+
 Notebooks and what each does
 - `notebooks/top10_analysis.ipynb` — RAWG-only Top‑10 generator. Runs headless and writes per-category CSVs and a combined CSV. Prints human-readable Top‑10 lists in separate cells (one cell per category). The top-10 logic is vectorized for speed.
 - `notebooks/awards_analysis.ipynb` — per-source awards analysis. This notebook was refactored to avoid constructing a brittle unified table; it computes Top‑10s per source.
