@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://www.gamewallpapers.com/wallpapers_slechte_compressie/ultrawidegame/clair_obscur_expedition_33_01_5120x1440.jpg" alt="Clair Obscur: Expedition 33" width="100%" />
+  <img src="https://www.gamewallpapers.com/img_script/wallpaper_dir/img.php?src=wallpaper_clair_obscur_expedition_33_06_2560x1080.jpg&height=506&sharpen" alt="Clair Obscur: Expedition 33" width="100%" />
 </p>
 
 <h1 align="center">🎮 GOTY 2025 Analysis</h1>
@@ -43,15 +43,15 @@ The focus is not just analysis, but **end-to-end data engineering discipline**:
 ## 📊 Visual Snapshots
 
 <p align="center">
-  <img src="fig/fig.png" width="80%" />
+  <img src="https://github.com/jabhuiyan/game-data-analytics/blob/main/figs/fig3.png?raw=true" width="80%" />
 </p>
 
 <p align="center">
-  <img src="fig/fig1.png" width="80%" />
+  <img src="https://github.com/jabhuiyan/game-data-analytics/blob/main/figs/newplotPlatforms.png?raw=true" width="80%" />
 </p>
 
 <p align="center">
-  <img src="fig/fig2.png" width="80%" />
+  <img src="https://github.com/jabhuiyan/game-data-analytics/blob/main/figs/newplotTopDevs.png?raw=true" width="80%" />
 </p>
 
 > All figures are generated via Plotly and saved as artifacts for non-technical stakeholders.
