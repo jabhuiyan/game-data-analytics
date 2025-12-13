@@ -1,36 +1,143 @@
-# GOTY 2025 Analysis
+<p align="center">
+  <img src="https://www.gamewallpapers.com/wallpapers_slechte_compressie/ultrawidegame/clair_obscur_expedition_33_01_5120x1440.jpg" alt="Clair Obscur: Expedition 33" width="100%" />
+</p>
 
-Clean, reproducible analysis of games released in the Nov 2024 → Nov 2025 window. This project collects, cleans, and analyzes game metadata from three sources (RAWG, Metacritic, Steam) and produces recruiter-ready artifacts and short technical deliverables.
+<h1 align="center">🎮 GOTY 2025 Analysis</h1>
 
-Why this project matters
-- Curated shortlist creation: I built per-category Top‑10 lists (by rating) suitable for awards, press kits, and editorial pipelines.
-- Cross-source pipeline: data was ingested from public sources, cleaned with interruption-safe pipelines, deduplicated and normalized, and written to `data/processed/` for downstream use.
-- Reproducible analysis: all notebooks run headlessly and produce the same CSV outputs so results can be re-generated reliably.
+<p align="center">
+  <b>Clean, reproducible, recruiter-ready data analysis of games released between Nov 2024 → Nov 2025</b>
+</p>
 
-High-level deliverables
-- Scrapers & Cleaners: automated scraping and robust cleaners for RAWG, Metacritic and Steam (in `src/`).
-- Cleaned datasets: final cleaned CSVs in `data/processed/` (e.g. `rawg_cleaned.csv`, `metacritic_cleaned.csv`, `steam_cleaned.csv`).
-- Notebooks (headless-ready): Plotly EDA notebooks per source, an awards-analysis notebook, a RAWG-only Top‑10 notebook (`notebooks/top10_analysis.ipynb`), and an ML demo notebook (uses only Metacritic raw CSV as required).
-- Lookup CLI: a small `src/game_lookup.py` utility to inspect games from cleaned data.
-
-Key produced analytics files (business-ready)
-- `data/processed/rawg_genre_counts.csv` — tally of releases by genre (top genres). Business KPI: genre share and opportunity areas (what genres are most active / gaining releases).
-- `data/processed/rawg_platform_counts.csv` — platform distribution across releases. Business KPI: platform market share among releases (useful for prioritizing platform-specific marketing and distribution).
-- `data/processed/top10_rawg_best_overall.csv` — overall top‑10 highest‑rated RAWG titles. Business KPI / story: highlights the highest quality titles to feature in editorial, awards shortlists, or promotional campaigns.
-What to open first
-Why these files matter to the business
-- Genre counts tell product and editorial teams which categories are crowded or growing; use this to inform content strategies and competitive analysis.
-- Platform counts reveal where releases are concentrated (PC, consoles, mobile) and help prioritize partnerships or platform-specific spend.
-- The Overall Top‑10 surfaces high‑quality titles for awards consideration, marketing spotlights, or licensing conversations — a compact, actionable shortlist for non-technical stakeholders.
-1. `notebooks/top10_analysis-executed.ipynb` — executed copy showing the RAWG Top‑10 per category and an overall Top‑10.
-2. `data/processed/` — contains the per-category CSV exports, combined CSV, and cleaned source CSVs.
-
-Quick notes
-- The ML demo uses only the Metacritic raw dataset (required constraint) and includes a short model comparison and a saved joblib model.
-- Notebooks are designed to run headless. If you want a PDF of any notebook: export to HTML then print-to-PDF (recommended) or install TeX (`xelatex`) to use LaTeX-based PDF export.
-
-Contact
-If you want a 5‑minute walkthrough, email me and I’ll demo the notebooks and the Top‑10 selection logic live.
+<p align="center">
+  RAWG • Metacritic • Steam • Python • Plotly • Reproducible Pipelines
+</p>
 
 ---
-For a technical deep-dive aimed at data analysts, open `README_ANALYST.md` in this repo.
+
+## ✨ Project Overview
+
+This project collects, cleans, and analyzes **video game metadata** from three major public sources — **RAWG, Metacritic, and Steam** — to produce **award-style shortlists**, **business-ready analytics**, and **reproducible technical artifacts**.
+
+The focus is not just analysis, but **end-to-end data engineering discipline**:
+- interruption-safe scraping
+- deduplication & normalization
+- deterministic outputs suitable for downstream use
+
+---
+
+## 🧠 Why This Project Matters
+
+**For recruiters, analysts, and data teams**
+
+- 🏆 **Curated shortlist creation**  
+  Built per-category and overall **Top-10 lists by rating**, suitable for awards, editorial pipelines, or marketing spotlights.
+
+- 🔗 **Cross-source data pipeline**  
+  Public data ingested, cleaned, normalized, and written to `data/processed/` for reliable reuse.
+
+- ♻️ **Reproducible analysis**  
+  All notebooks run headlessly and regenerate identical CSV outputs — no manual steps, no hidden state.
+
+---
+
+## 📊 Visual Snapshots
+
+<p align="center">
+  <img src="fig/fig.png" width="80%" />
+</p>
+
+<p align="center">
+  <img src="fig/fig1.png" width="80%" />
+</p>
+
+<p align="center">
+  <img src="fig/fig2.png" width="80%" />
+</p>
+
+> All figures are generated via Plotly and saved as artifacts for non-technical stakeholders.
+
+---
+
+## 📦 High-Level Deliverables
+
+### 🔧 Scrapers & Cleaners
+- Automated scrapers and robust cleaning pipelines for:
+  - RAWG
+  - Metacritic
+  - Steam  
+- Located in `src/`, designed to resume safely after interruptions.
+
+### 🗂 Cleaned Datasets
+Final normalized CSVs in `data/processed/`, including:
+- `rawg_cleaned.csv`
+- `metacritic_cleaned.csv`
+- `steam_cleaned.csv`
+
+### 📓 Notebooks (Headless-Ready)
+- Plotly EDA notebooks per source
+- Awards & Top-10 analysis
+- RAWG-only Top-10 notebook
+- ML demo notebook (Metacritic raw CSV only, per constraint)
+
+### 🔍 Lookup CLI
+- `src/game_lookup.py`  
+  Lightweight CLI to inspect cleaned game entries without opening notebooks.
+
+---
+
+## 📈 Business-Ready Analytics (Key Outputs)
+
+| File | What It Shows | Business Value |
+|-----|--------------|----------------|
+| `rawg_genre_counts.csv` | Releases per genre | Identify crowded vs. growing categories |
+| `rawg_platform_counts.csv` | Platform distribution | Platform market share & prioritization |
+| `top10_rawg_best_overall.csv` | Highest-rated titles | Awards, editorial, and marketing shortlists |
+
+---
+
+## 🚀 What to Open First
+
+1. **`notebooks/top10_analysis-executed.ipynb`**  
+   → Fully executed notebook showing Top-10s per category and overall.
+
+2. **`data/processed/`**  
+   → Cleaned datasets and per-category CSV exports ready for use.
+
+---
+
+## 📝 Quick Notes
+
+- 🤖 **ML Demo**  
+  Uses *only* the Metacritic raw dataset (explicit constraint)  
+  Includes:
+  - model comparison
+  - evaluation
+  - saved `joblib` model
+
+- 📄 **Notebook Exporting**  
+  Designed to run headlessly  
+  - Recommended: export to HTML → print to PDF  
+  - Alternative: LaTeX (`xelatex`) PDF export
+
+---
+
+## 📫 Contact
+
+If you want a **5-minute walkthrough**, I’m happy to:
+- demo the notebooks
+- explain the Top-10 selection logic
+- discuss design decisions and trade-offs
+
+📧 *Email me and I’ll walk you through it live.*
+
+---
+
+### 🔍 Technical Deep-Dive
+
+For a more detailed, analyst-focused breakdown of:
+- schema decisions
+- cleaning logic
+- modeling choices  
+
+➡️ Open **`README_ANALYST.md`** in this repo.
+
