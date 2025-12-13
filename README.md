@@ -5,7 +5,7 @@
 <h1 align="center">🎮 GOTY 2025 Analysis</h1>
 
 <p align="center">
-  <b>Clean, reproducible, recruiter-ready data analysis of games released between Nov 2024 → Nov 2025</b>
+  <b>Clean and reproducible data analysis of games released between Nov 2024 → Nov 2025</b>
 </p>
 
 <p align="center">
