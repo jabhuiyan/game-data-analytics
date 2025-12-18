@@ -58,7 +58,7 @@ The focus is not just analysis, but **end-to-end data engineering discipline**:
 
 ---
 
-## 📊 Tableau Dashboard: Gaming Industry Data Analytics
+## 📊 [Tableau](https://public.tableau.com/shared/BYDNPCSBG?:display_count=n&:origin=viz_share_link) Dashboard: Gaming Industry Data Analytics
 
 <p align="center">
   <img src="https://github.com/jabhuiyan/game-data-analytics/blob/main/figs/Screenshot%20from%202025-12-17%2017-01-44.png?raw=true" alt="Tableau Overview" width="80%" />
