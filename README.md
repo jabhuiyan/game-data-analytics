@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  RAWG • Metacritic • Steam • Python • Plotly • Reproducible Pipelines
+  RAWG • Metacritic • Steam • Python • Plotly • Tableau • Reproducible Pipelines
 </p>
 
 ---
@@ -40,7 +40,7 @@ The focus is not just analysis, but **end-to-end data engineering discipline**:
 
 ---
 
-## 📊 Visual Snapshots
+## 📊 Visual Snapshots (Plotly)
 
 <p align="center">
   <img src="https://github.com/jabhuiyan/game-data-analytics/blob/main/figs/fig3.png?raw=true" width="80%" />
@@ -55,6 +55,30 @@ The focus is not just analysis, but **end-to-end data engineering discipline**:
 </p>
 
 > All figures are generated via Plotly and saved as artifacts for non-technical stakeholders.
+
+---
+
+## 📊 Tableau Dashboard: Gaming Industry Data Analytics
+
+<p align="center">
+  <img src="https://github.com/jabhuiyan/game-data-analytics/blob/main/figs/Screenshot%20from%202025-12-17%2017-01-44.png?raw=true" alt="Tableau Overview" width="80%" />
+</p>
+
+<p align="center">
+  <img src="https://github.com/jabhuiyan/game-data-analytics/blob/main/figs/Screenshot%20from%202025-12-17%2017-26-46.png?raw=true" alt="Tableau Interactive Filters" width="80%" />
+</p>
+
+<p align="center">
+  <img src="https://github.com/jabhuiyan/game-data-analytics/blob/main/figs/Screenshot%20from%202025-12-17%2017-22-58.png?raw=true" alt="Tableau Top-N Developer View" width="80%" />
+</p>
+
+**Resume-Ready Highlights:**
+
+- Developed an interactive Tableau dashboard analyzing gaming industry KPIs, including pricing strategy, adoption, critic vs. player reception, and developer reputation.  
+- Visualized multi-source data (Steam, Metacritic, and best-selling game datasets) to uncover actionable insights on market adoption, quality perception, and developer consistency.  
+- Implemented cross-worksheet filters on developer, dynamic Top-N developer views, and interactive drilldowns, enabling stakeholders to explore platform-specific and developer-specific performance.  
+- Designed dashboards for large datasets (millions of records) with performance optimization, clean visual hierarchy, and professional styling for executive and recruiter audiences.  
+- Delivered a story-driven analysis highlighting: free-to-play adoption trends, quality alignment gaps, and high-performing developer benchmarks, demonstrating business impact.  
 
 ---
 
@@ -103,6 +127,9 @@ Final normalized CSVs in `data/processed/`, including:
 2. **`data/processed/`**  
    → Cleaned datasets and per-category CSV exports ready for use.
 
+3. **Tableau Dashboard (Portfolio)**  
+   → Interactive story-driven dashboard demonstrating key gaming industry insights.
+
 ---
 
 ## 📝 Quick Notes
@@ -124,7 +151,7 @@ Final normalized CSVs in `data/processed/`, including:
 ## 📫 Contact
 
 If you want a **5-minute walkthrough**, I’m happy to:
-- demo the notebooks
+- demo the notebooks and Tableau dashboard
 - explain the Top-10 selection logic
 - discuss design decisions and trade-offs
 
@@ -140,4 +167,5 @@ For a more detailed, analyst-focused breakdown of:
 - modeling choices  
 
 ➡️ Open **`README_ANALYST.md`** in this repo.
+
 
